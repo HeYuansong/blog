@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <h1>
+        <a href="/">回到主页</a>
+    </h1>
+	<h1>用户注册页面</h1>
+    <%if(msg){%>
+    <h2><%=msg%></h2>
+    <%}%>
+	<form action="/register" method="post">
+		用户名<input type="text" name="username">
+        邮箱 <input type="email" name="email">
+        密码<input type="password" name="password">
+		<input type="submit">
+    </form>
+    <a href="/login">去登陆</a>
+</body>
+</html>
