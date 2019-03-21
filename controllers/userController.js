@@ -17,6 +17,7 @@ exports.login=function(req,res){
         }
         else{
             req.session.user=user;
+            req.session.msg="success";
             res.redirect('/main');
         }
     })

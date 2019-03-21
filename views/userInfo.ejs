@@ -1,0 +1,19 @@
+<!-- userInfo.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户个人信息修改</title>
+</head>
+<body>
+	<h1>用户个人信息修改</h1>
+	<form action="/userInfo" method="post">
+		<% if(user){ %>
+		原用户 <h1><%= user.username %></h1>
+		<% } %>
+		用户名 <input type="text" name="username">
+		密码<input type="password" password="password">
+		<input type="submit" value="修改">
+	</form>
+</body>
+</html>

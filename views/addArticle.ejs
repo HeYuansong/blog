@@ -1,0 +1,46 @@
+<!-- addArticle.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>发布新闻</title>
+	<style>	
+		header{
+			display: flex;
+			height:5vh;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<a href="/option">设置</a>
+		<div>
+		<input type="text">
+		&nbsp;
+		<a href="/search">搜索</a>			
+		</div>
+		<a href="/main">主页</a>
+		<a href="/addArticle">发布新闻</a>
+		<% if(user){ %>
+			<a href="/userPage"><%=user.username%></a>
+		<%}else{%>
+			<a href="/login">去登陆</a>
+		<% } %>
+	</header>
+	<div class="content">
+		<form action="/addArticle" method="post">
+			标题<input type="text" name="title">
+			<br>
+			<br>
+			内容<textarea name="content" id="" cols="30" rows="10">
+			</textarea>
+			<br>
+			<br>
+			<input type="submit" value="发布">
+		</form>
+	</div>
+</body>
+</html>
