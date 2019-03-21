@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文章详情页</title>
+</head>
+<body>
+		<a href="/main">回到主页</a>
+		<%if(article){%>
+        <h1><%=article.title%></h1>
+        <h3 style="color:blue;"><%=article.author%></h3>
+        <p><%=article.content%></p>
+
+		<%if(comments){%>
+			<%for(let i = 0; i< comments.length;i++){ %>
+				<h5><%=comments[i].content%></h5>
+				<p style="color:red;"><%=comments[i].username%></p>
+			<%} %>
+		<%}%>
+		<form action="/addComment" method="post">
+			<input type="text" name="content">
+			<input type="text" name="articleId" value="<%=article._id%>" hidden="true">
+			<input type="submit" value="评论">
+		</form>
+		<%}%>
+</body>
+</html>
