@@ -2,19 +2,59 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>主页</title>
+	<style>
+		header{
+			display: flex;
+			height:5vh;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+		section{
+			width:100vw;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+	</style>
 </head>
 <body>
-	<h1>首页</h1>
-	<%if(msg){%>
-	<h2><%=msg%></h2>
-	<%}%>
-	<%if(user){%>
-	<h2><%=user.username%></h2>
-	<h3><%=user.password%></h3>
-	<h4><%=user.email%></h4>
-	<%}%>
-	<a href="/login">去登陆页面</a>
-	<a href="/logout">退出登陆</a>
+	<header>
+		<a href="/option">设置</a>
+		<div>
+		<input type="text">
+		&nbsp;
+		<a href="/search">搜索</a>			
+		</div>
+		<a href="/main">主页</a>
+		<a href="/addArticle">发布新闻</a>
+		<%if(user){%>
+			<div>
+			<a href="/userPage"><%=user.username%></a>	
+			<a href="/logout">退出登陆</a>			
+			</div>
+		<%}else{%>
+			<a href="/login">去登陆</a>
+		<%}%>
+	</header>
+	<section>
+		<div class="nav">
+			<a href="">导航1</a>
+			<a href="">导航2</a>
+			<a href="">导航3</a>
+		</div>
+		<div class="content">
+			<h3><a href="">文章1</a></h3>
+			<h3><a href="">文章2</a></h3>
+			<h3><a href="">文章3</a></h3>
+		</div>
+		<div class="items">
+			<a href="">分类1</a>
+			<a href="">分类2</a>
+			<a href="">分类3</a>
+		</div>
+	</section>
 </body>
 </html>
