@@ -30,4 +30,4 @@ userRouter.get('/logout',(req,res)=>{
 });
 userRouter.post('/login',userController.login);
 userRouter.post('/register',userController.register);
-exports=userRouter;
+module.exports=userRouter;
